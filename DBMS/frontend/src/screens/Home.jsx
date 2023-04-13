@@ -16,6 +16,7 @@ const Home = () => {
     return(
         <div>
             User : {user.user_name}
+            Role : {}
         </div>
     )
 }

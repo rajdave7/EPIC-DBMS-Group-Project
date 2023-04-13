@@ -6,10 +6,11 @@ const SignUpPage = () => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [mobile, setMobile] = useState('');
+  const [role, setRole] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await createUser(name, email, address, mobile);
+    const res = await createUser(name, email, address, mobile,role);
     console.log(res);
     alert("User Created Successfully!!");
   };
@@ -63,6 +64,15 @@ const SignUpPage = () => {
                 value={mobile}
                 onChange={(e) => setMobile(e.target.value)}
               />
+            </div>
+            <div className="form-group">
+              <label htmlFor="role">Role</label>
+        
+              <select className='form-control' placeholder='role' value={role} onChange={(e) => setRole(e.target.value)}>
+                <option value="owner">Owner</option>
+                <option value="tenant">Tenant</option>
+                <option value="broker">Broker</option>
+              </select>
             </div>
             <button type="submit" className="btn btn-primary mt-2">
               Sign Up
